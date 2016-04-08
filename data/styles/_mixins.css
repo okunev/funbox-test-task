@@ -1,0 +1,5 @@
+.card-mixin {
+  background-color: white;
+  border: 4px #1698d9 solid;
+  color: black;
+}

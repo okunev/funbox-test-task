@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Тестовое задание для Funbox</title>
+	<meta name="description" content="Тестовое задание для компании Funbox.">
+	<meta name="author" content="Саша Окунев">
+	<link rel="stylesheet" href="data/styles/reset.css">
+	<link rel="stylesheet" href="data/styles/style.css">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+  <script src="data/js/jquery-1.12.0.min.js"></script>
+	<script src="data/js/handlebars.js"></script>
+	<script src="data/js/data.js"></script>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- templates -->
+
+  <script id="header-template" type="text/x-handlebars-template">{{title}}</script>
+
+  <script id="catfood-template" type="text/x-handlebars-template">
+
+      {{#each catfood}}
+        <li>
+
+          <div class="triangle-container">
+            <div class="triangle-border">
+              <div class="triangle"></div>
+            </div>
+          </div>
+
+          <div class="preheader">
+            
+            <p>{{preheader}}
+            
+          </div>
+
+          <div class="card" style="background-image: url('{{background}}')">
+            <h2>{{header}}<br>
+            <span>{{content}}</span></h2>
+            <br>
+            <p>{{quantity}}
+            <p>{{present}}
+            
+            <div class="weight">
+              <p class="number">{{weight}}
+              <p>{{scale}}
+            </div>
+          </div>
+          <div class="call-to-action">
+            <p>{{callToAction}}
+          </div>
+          
+        </li>
+      {{/each}}
+
+  </script>
+
+  <h1 class="header"></h1>
+
+  <ul class="cards">
+    
+  </ul>
+
+</body>
+</html>

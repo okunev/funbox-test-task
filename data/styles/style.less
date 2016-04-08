@@ -1,0 +1,162 @@
+@import (reference) "_vars";
+@import (reference) "_mixins";
+
+@import "_font-faces";
+
+body {
+  background-color: black;
+  background: url("../back.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  color: white;
+}
+
+.wrap {
+  outline: 1px dashed red;
+  margin: 0 auto 30px auto;
+  width: 90%;
+}
+
+h1 {
+  display: block;
+  font-family: @exo;
+  font-size: 36px;
+  text-align: center;
+  padding: 45px 0 30px 0;
+}
+
+
+ul.cards {
+  list-style: none;
+  overflow: hidden;
+  
+  li {
+    padding: 0 20px 0 0;
+    float: left;
+    overflow: hidden;
+    width: 320px;              //
+
+    .triangle-container {
+      float: left;
+      width: 48px;
+      height: 48px;
+      outline: 1px dashed red;
+
+      .triangle-border {
+        .triangle-mixin;
+          position: relative;
+          border-width: 0 0 48px 48px;
+          border-color: transparent transparent @blue transparent;
+  
+        .triangle {
+          .triangle-mixin;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            border-width: 0 0 43px 43px;
+            border-color: transparent transparent white transparent;
+        }
+      }
+    }
+
+    .preheader {
+      .card-mixin;
+      
+      border-bottom: none;
+      border-left: none;
+      border-top-right-radius: @radius; 
+      float: left;
+      width: 262px;
+      height: 44px;
+    
+      p {
+        color: @grey;
+        font-family: @trebuchet-regular;
+        font-size: 16px;
+        padding: 20px 0 0 0;
+      }
+    
+    }
+
+    .card {
+      float: left;
+      position: relative;
+      
+      .card-mixin;
+      border-top: none;      
+      width: 306px;
+      height: 480px;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      border-bottom-left-radius: @radius;
+      border-bottom-right-radius: @radius;
+    
+      h2 {
+        font-family: @trebuchet-bold;
+        font-weight: 700;
+        font-size: 48px;
+        padding: 20px 0 0 42px;
+        color: black;
+        line-height: 40px;
+        
+        span {
+          font-size: 24px;
+        }
+        
+      }
+
+      p {
+        font-family: @trebuchet-regular;
+        color: @grey;
+        font-size: 14px;
+        padding: 0 0 0 42px;
+        line-height: 1.2;
+      }
+
+      .weight {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 50%;
+        background-color: @blue;
+        width: 80px;
+        height: 80px;
+
+        p {
+          color: white;
+          font-family: @trebuchet-regular;
+          text-align: center;
+          font-size: 21px;
+          padding: 0;
+        
+          &.number {
+            font-size: 42px;
+            padding: 10px 0 0 0;
+            line-height: 43px;
+          }
+        }
+      }
+    }
+    
+    .call-to-action {
+      float: left;
+      padding: 15px 0 0 0;
+      width: 100%;
+      
+      p {
+        display: block;
+        font-family: @trebuchet-regular;
+        font-size: 13px;
+        text-align: center;
+        
+        a {
+          text-decoration: none;
+          color: @blue;
+          border-bottom: 1px dashed @blue;
+        }
+      }
+    }
+  }
+}
