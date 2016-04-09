@@ -5,45 +5,62 @@ $(function () {
   // CatfoodObject Defaults
 
   var defaultPreheader = "Сказочное заморское яство";
+  var defaultHoverPreheader = "Котэ не одобряет?";
   var defaultCatfoodHeader = "Нямушка";
   var defaultScale = "кг";
-  var defaultCallToAction = "Чего сидишь? Порадуй котэ, <a href='#'>купи</a>";
+  var defaultCallToAction = "Чего сидишь? Порадуй котэ, ";
   var defaultBackground = "data/cat.png";
 
   var catfoodObject = {
     catfood: [
       {
-        preheader: defaultPreheader,
-        header: defaultCatfoodHeader,
         content: "с фуа-гра",
+        id: 1,
+        preheader: defaultPreheader,
+        hoverPreheader: defaultHoverPreheader,
+        header: defaultCatfoodHeader,
         quantity: "10 порций",
         present: "мышь в подарок",
         weight: "0,5",
         scale: defaultScale,
         background: defaultBackground,
-        callToAction: defaultCallToAction
+        callToAction: defaultCallToAction,
+        active: "Печень утки разварная с артишоками.",
+        disabledText: "Печалька, с фуа-гра закончился.",
+        disabled: ""
       },
       { 
-        preheader: defaultPreheader,
-        header: defaultCatfoodHeader,
         content: "с рыбой",
+        id: 2,
+        preheader: defaultPreheader,
+        hoverPreheader: defaultHoverPreheader,
+        header: defaultCatfoodHeader,
         quantity: "40 порций",
         present: "2 мыши в подарок",
         weight: "2",
         scale: defaultScale,
         background: defaultBackground,
-        callToAction: defaultCallToAction
+        callToAction: defaultCallToAction,
+        active: "Головы щучьи с чесноком да свежайшая сёмгушка.",
+        disabledText: "Печалька, с рыбой закончился.",
+        disabled: ""
       },
       { 
-        preheader: defaultPreheader,
-        header: defaultCatfoodHeader,
         content: "с курой",
+        id: 3,
+        preheader: defaultPreheader,
+        hoverPreheader: defaultHoverPreheader,
+        header: defaultCatfoodHeader,
         quantity: "100 порций",
-        present: "2 мыши в подарок<br>заказчик доволен",
+        present: "2 мыши в подарок",
+        bonus: "заказчик доволен",
         weight: "5",
         scale: defaultScale,
         background: defaultBackground,
-        callToAction: defaultCallToAction
+        callToAction: defaultCallToAction,
+        active: "Филе из циплят с трюфелями в бульоне",
+        disabledText: "Печалька, с курой закончился.",
+        disabled: "disabled"
       }
     ]
   };

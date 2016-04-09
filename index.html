@@ -16,6 +16,7 @@
   <script src="data/js/jquery-1.12.0.min.js"></script>
 	<script src="data/js/handlebars.js"></script>
 	<script src="data/js/data.js"></script>
+	<script src="data/js/states.js"></script>
 
 </head>
 
@@ -30,7 +31,7 @@
   <script id="catfood-template" type="text/x-handlebars-template">
 
       {{#each catfood}}
-        <li>
+        <li id="id-{{id}}" class="item {{disabled}}">
 
           <div class="triangle-container">
             <div class="triangle-border">
@@ -40,24 +41,29 @@
 
           <div class="preheader">
             
-            <p>{{preheader}}
+            <p class="default">{{preheader}}</p>
+            <p class="hover">{{hoverPreheader}}</p>
             
           </div>
 
           <div class="card" style="background-image: url('{{background}}')">
+            <div class="ghost"></div>
             <h2>{{header}}<br>
             <span>{{content}}</span></h2>
             <br>
-            <p>{{quantity}}
-            <p>{{present}}
+            <p>{{quantity}}</p>
+            <p>{{present}}</p>
+            <p>{{bonus}}</p>
             
             <div class="weight">
-              <p class="number">{{weight}}
-              <p>{{scale}}
+              <p class="number">{{weight}}</p>
+              <p>{{scale}}</p>
             </div>
           </div>
           <div class="call-to-action">
-            <p>{{callToAction}}
+            <p class="default">{{callToAction}} <a href="#">купи</a>.</p>
+            <p class="active">{{active}}</p>
+            <p class="disabled">{{disabledText}}</p>
           </div>
           
         </li>

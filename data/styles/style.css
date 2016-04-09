@@ -20,16 +20,11 @@
   font-style: normal;
 }
 body {
+  background: url("../back.jpg") repeat-x center center fixed;
   background-color: black;
-  background: url("../back.jpg") no-repeat center center fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
   color: white;
 }
 .wrap {
-  outline: 1px dashed red;
   margin: 0 auto 30px auto;
   width: 90%;
 }
@@ -45,16 +40,29 @@ ul.cards {
   overflow: hidden;
 }
 ul.cards li {
-  padding: 0 20px 0 0;
+  padding: 0 25px 0 25px;
   float: left;
   overflow: hidden;
   width: 320px;
+}
+ul.cards li:hover {
+  cursor: pointer;
+}
+ul.cards li:hover .triangle-container .triangle-border {
+  border-color: transparent transparent #2ea8e6 transparent;
+}
+ul.cards li:hover .preheader,
+ul.cards li:hover .card {
+  border-color: #2ea8e6;
+}
+ul.cards li:hover .preheader .weight,
+ul.cards li:hover .card .weight {
+  background-color: #2ea8e6;
 }
 ul.cards li .triangle-container {
   float: left;
   width: 48px;
   height: 48px;
-  outline: 1px dashed red;
 }
 ul.cards li .triangle-container .triangle-border {
   display: block;
@@ -148,17 +156,114 @@ ul.cards li .card .weight p.number {
 }
 ul.cards li .call-to-action {
   float: left;
-  padding: 15px 0 0 0;
   width: 100%;
 }
 ul.cards li .call-to-action p {
   display: block;
   font-family: "Trebuchet Regular", "Myriad Pro", Helvetica, Arial;
   font-size: 13px;
+  padding: 15px 0 10px 0;
   text-align: center;
 }
 ul.cards li .call-to-action p a {
   text-decoration: none;
   color: #1698d9;
   border-bottom: 1px dashed #1698d9;
+}
+ul.cards li .call-to-action p a:hover {
+  color: #2ea8e6;
+  border-bottom: 1px dashed #2ea8e6;
+}
+ul.cards li .call-to-action p.active {
+  display: none;
+}
+ul.cards li .call-to-action p.disabled {
+  display: none;
+  color: #ffff66;
+}
+ul.cards .active:hover .triangle-container .triangle-border {
+  border-color: transparent transparent #e62e7a transparent;
+}
+ul.cards .active:hover .preheader,
+ul.cards .active:hover .card {
+  border-color: #e62e7a;
+}
+ul.cards .active:hover .preheader .weight,
+ul.cards .active:hover .card .weight {
+  background-color: #e62e7a;
+}
+ul.cards .active:hover .preheader p.default {
+  display: none;
+}
+ul.cards .active:hover .preheader p.hover {
+  display: block;
+  color: #e62e7a;
+}
+ul.cards .active:hover .call-to-action p.default {
+  display: none;
+}
+ul.cards .active:hover .call-to-action p.active {
+  display: block;
+}
+ul.cards .active .triangle-container .triangle-border {
+  border-color: transparent transparent #d91667 transparent;
+}
+ul.cards .active .preheader,
+ul.cards .active .card {
+  border-color: #d91667;
+}
+ul.cards .active .preheader .weight,
+ul.cards .active .card .weight {
+  background-color: #d91667;
+}
+ul.cards .disabled:hover .triangle-container .triangle-border {
+  border-color: transparent transparent #b3b3b3 transparent;
+}
+ul.cards .disabled:hover .preheader,
+ul.cards .disabled:hover .card {
+  border-color: #b3b3b3;
+}
+ul.cards .disabled:hover .preheader .weight,
+ul.cards .disabled:hover .card .weight {
+  background-color: #b3b3b3;
+}
+ul.cards .disabled:hover .preheader p.default {
+  display: none;
+}
+ul.cards .disabled:hover .preheader p.hover {
+  display: block;
+  color: #b3b3b3;
+}
+ul.cards .disabled .triangle-container .triangle-border {
+  border-color: transparent transparent #b3b3b3 transparent;
+}
+ul.cards .disabled .preheader,
+ul.cards .disabled .card {
+  border-color: #b3b3b3;
+}
+ul.cards .disabled .preheader .weight,
+ul.cards .disabled .card .weight {
+  background-color: #b3b3b3;
+}
+ul.cards .disabled .preheader p {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+ul.cards .disabled .card .ghost {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+ul.cards .disabled .call-to-action .disabled {
+  display: block;
+}
+ul.cards .disabled .call-to-action .default,
+ul.cards .disabled .call-to-action .active {
+  display: none;
 }

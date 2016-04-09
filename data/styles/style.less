@@ -4,17 +4,12 @@
 @import "_font-faces";
 
 body {
+  background: url("../back.jpg") repeat-x center center fixed;
   background-color: black;
-  background: url("../back.jpg") no-repeat center center fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
   color: white;
 }
 
 .wrap {
-  outline: 1px dashed red;
   margin: 0 auto 30px auto;
   width: 90%;
 }
@@ -33,30 +28,46 @@ ul.cards {
   overflow: hidden;
   
   li {
-    padding: 0 20px 0 0;
+    padding: 0 25px 0 25px;
     float: left;
     overflow: hidden;
     width: 320px;              //
+    
+    &:hover {
+      cursor: pointer;
+      .triangle-container {
+        .triangle-border {
+          border-color: transparent transparent @blue-hover transparent;
+        }
+      }
+      .preheader,
+      .card {
+        border-color: @blue-hover;
+        .weight {
+          background-color: @blue-hover;
+        }
+      }
+    }
 
     .triangle-container {
       float: left;
       width: 48px;
       height: 48px;
-      outline: 1px dashed red;
+//       outline: 1px dashed red;
 
       .triangle-border {
         .triangle-mixin;
-          position: relative;
-          border-width: 0 0 48px 48px;
-          border-color: transparent transparent @blue transparent;
+        position: relative;
+        border-width: 0 0 48px 48px;
+        border-color: transparent transparent @blue transparent;
   
         .triangle {
           .triangle-mixin;
-            position: absolute;
-            top: 5px;
-            right: 0;
-            border-width: 0 0 43px 43px;
-            border-color: transparent transparent white transparent;
+          position: absolute;
+          top: 5px;
+          right: 0;
+          border-width: 0 0 43px 43px;
+          border-color: transparent transparent white transparent;
         }
       }
     }
@@ -142,20 +153,156 @@ ul.cards {
     
     .call-to-action {
       float: left;
-      padding: 15px 0 0 0;
       width: 100%;
       
       p {
         display: block;
         font-family: @trebuchet-regular;
         font-size: 13px;
+        padding: 15px 0 10px 0;
         text-align: center;
         
         a {
           text-decoration: none;
           color: @blue;
           border-bottom: 1px dashed @blue;
+        
+          &:hover {
+            color: @blue-hover;
+            border-bottom: 1px dashed @blue-hover;
+          }
         }
+
+        &.active {
+          display: none;
+        }
+
+        &.disabled {
+          display: none;
+          color: @disabled-yellow;
+        }
+      }
+    }
+  }
+
+  .active {
+    &:hover {
+      .triangle-container {
+        .triangle-border {
+          border-color: transparent transparent @magenta-hover transparent;
+        }
+      }
+      .preheader,
+      .card {
+        border-color: @magenta-hover;
+        .weight {
+          background-color: @magenta-hover;
+        }      
+      }
+      
+      .preheader {
+        p {
+          &.default {
+            display: none;
+          }
+          &.hover {
+            display: block;
+            color: @magenta-hover;
+          }
+        }
+      }
+      
+      .call-to-action {
+        p {
+          &.default {
+            display: none;
+          }
+          &.active {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .triangle-container {
+      .triangle-border {
+        border-color: transparent transparent @magenta transparent;
+      }
+    }
+    .preheader,
+    .card {
+      border-color: @magenta;
+      .weight {
+        background-color: @magenta;
+      }
+    }
+  }
+
+  .disabled {
+    
+    &:hover {
+     .triangle-container {
+        .triangle-border {
+          border-color: transparent transparent @disabled transparent;
+        }
+      }
+      .preheader,
+      .card {
+        border-color: @disabled;
+        .weight {
+          background-color: @disabled;
+        }      
+      }
+      
+      .preheader {
+        p {
+          &.default {
+            display: none;
+          }
+          &.hover {
+            display: block;
+            color: @disabled;
+          }
+        }
+      }
+    }
+    
+    .triangle-container {
+      .triangle-border {
+        border-color: transparent transparent @disabled transparent;
+      }
+    }
+    .preheader,
+    .card {
+      border-color: @disabled;
+      .weight {
+        background-color: @disabled;
+      }
+    }
+
+    .preheader {
+      p {
+        .half-opaque;
+      }
+    }
+    .card {
+      .ghost {
+        .half-opaque;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        border-radius: @radius;
+      }
+    }
+
+    .call-to-action {
+      .disabled {
+        display: block;
+      }
+      .default,
+      .active {
+        display: none;
       }
     }
   }
