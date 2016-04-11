@@ -55,14 +55,21 @@
   font-style: normal;
 }
 body {
-  background: url("../back.jpg") repeat-x center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-attachment: fixed;
   background-color: black;
+  background-image: url("../background.png");
+  background-position: center center;
+  background-repeat: repeat-x;
+  background-size: cover;
   color: white;
-  height: 100%;
 }
-.wrap {
-  margin: 0 auto 30px auto;
-  width: 90%;
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   display: block;
@@ -138,18 +145,18 @@ ul.cards li .preheader p {
   padding: 20px 0 0 0;
 }
 ul.cards li .card {
-  float: left;
-  position: relative;
   background-color: white;
   border: 4px #1698d9 solid;
   color: black;
-  border-top: none;
-  width: 306px;
-  height: 480px;
-  background-repeat: no-repeat;
   background-position: left bottom;
+  background-repeat: no-repeat;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-top: none;
+  float: left;
+  height: 480px;
+  position: relative;
+  width: 306px;
 }
 ul.cards li .card h2 {
   font-family: "Trebuchet Bold", "Myriad Pro", Helvetica, Arial;
@@ -333,5 +340,20 @@ ul.cards .disabled .call-to-action .active {
   ul li:last-child {
     float: none;
     margin: 0 auto;
+  }
+}
+@media all and (min-width: 1300px) {
+  .centered-container {
+    margin: 50px 0 0 0;
+  }
+}
+@media all and (min-width: 1600px) {
+  .centered-container {
+    margin: 100px 0 0 0;
+  }
+}
+@media all and (min-width: 1920px) {
+  .centered-container {
+    margin: 200px 0 0 0;
   }
 }

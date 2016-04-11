@@ -27,60 +27,48 @@
   </div>
 -->
 
-<div class="wrap">
+  <div class="parent-container">
+    <div class="centered-container">
 
-  <!-- templates -->
-
-  <script id="header-template" type="text/x-handlebars-template">{{title}}</script>
-
-  <script id="catfood-template" type="text/x-handlebars-template">
-
-      {{#each catfood}}
-        <li id="id-{{id}}" class="item {{disabled}}">
-
-          <div class="triangle-container">
-            <div class="triangle-border">
-              <div class="triangle"></div>
+      <!-- templates -->
+      <script id="header-template" type="text/x-handlebars-template">{{title}}</script>
+      <script id="catfood-template" type="text/x-handlebars-template">
+        {{#each catfood}}
+          <li id="id-{{id}}" class="item {{disabled}}">
+            <div class="triangle-container">
+              <div class="triangle-border">
+                <div class="triangle"></div>
+              </div>
             </div>
-          </div>
-
-          <div class="preheader">
-            
-            <p class="default">{{preheader}}</p>
-            <p class="hover">{{hoverPreheader}}</p>
-            
-          </div>
-
-          <div class="card" style="background-image: url('{{background}}')">
-            <div class="ghost"></div>
-            <h2>{{header}}<br>
-            <span>{{content}}</span></h2>
-            <br>
-            <p>{{quantity}}</p>
-            <p>{{present}}</p>
-            <p>{{bonus}}</p>
-            
-            <div class="weight">
-              <p class="number">{{weight}}</p>
-              <p>{{scale}}</p>
+            <div class="preheader">
+              <p class="default">{{preheader}}</p>
+              <p class="hover">{{hoverPreheader}}</p>
             </div>
-          </div>
-          <div class="call-to-action">
-            <p class="default">{{callToAction}} <a href="#">купи</a>.</p>
-            <p class="active">{{active}}</p>
-            <p class="disabled">{{disabledText}}</p>
-          </div>
-          
-        </li>
-      {{/each}}
-
-  </script>
-
-  <h1 class="header"></h1>
-
-  <ul class="cards">
-    
-  </ul>
+            <div class="card" style="background-image: url('{{background}}')">
+              <div class="ghost"></div>
+              <h2>{{header}}<br>
+              <span>{{content}}</span></h2>
+              <br>
+              <p>{{quantity}}</p>
+              <p>{{present}}</p>
+              <p>{{bonus}}</p>
+              <div class="weight">
+                <p class="number">{{weight}}</p>
+                <p>{{scale}}</p>
+              </div>
+            </div>
+            <div class="call-to-action">
+              <p class="default">{{callToAction}} <a href="#">купи</a>.</p>
+              <p class="active">{{active}}</p>
+              <p class="disabled">{{disabledText}}</p>
+            </div>
+          </li>
+        {{/each}}
+      </script>
+      <h1 class="header"></h1>  
+      <ul class="cards"></ul>
+    </div>
+  </div>
 
   <script src="data/js/jquery-1.12.0.min.js"></script>
 	<script src="data/js/handlebars.js"></script>

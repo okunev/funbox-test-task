@@ -4,15 +4,26 @@
 @import "_font-faces";
 
 body {
-  background: url("../back.jpg") repeat-x center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-attachment: fixed;
   background-color: black;
+  background-image: url("../background.png"); // не порезал на вертикальную полоску, потому что возникли проблемы на больших расширениях. 
+  background-position: center center;
+  background-repeat: repeat-x;
+  background-size: cover;
   color: white;
-  height: 100%;
 }
 
-.wrap {
-  margin: 0 auto 30px auto;
-  width: 90%;
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-container {
 }
 
 h1 {
@@ -32,7 +43,7 @@ ul.cards {
     padding: 0 25px 25px 25px;
     float: left;
     overflow: hidden;
-    width: 320px;              //
+    width: 320px;
     
     &:hover {
       cursor: pointer;
@@ -74,7 +85,6 @@ ul.cards {
 
     .preheader {
       .card-mixin;
-      
       border-bottom: none;
       border-left: none;
       border-top-right-radius: @radius; 
@@ -92,17 +102,16 @@ ul.cards {
     }
 
     .card {
-      float: left;
-      position: relative;
-      
       .card-mixin;
-      border-top: none;      
-      width: 306px;
-      height: 480px;
-      background-repeat: no-repeat;
       background-position: left bottom;
+      background-repeat: no-repeat;
       border-bottom-left-radius: @radius;
       border-bottom-right-radius: @radius;
+      border-top: none;      
+      float: left;
+      height: 480px;
+      position: relative;      
+      width: 306px;
     
       h2 {
         font-family: @trebuchet-bold;
