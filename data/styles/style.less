@@ -1,12 +1,13 @@
 @import (reference) "_vars";
 @import (reference) "_mixins";
-
+@import "_tests";
 @import "_font-faces";
 
 body {
   background: url("../back.jpg") repeat-x center center fixed;
   background-color: black;
   color: white;
+  height: 100%;
 }
 
 .wrap {
@@ -28,7 +29,7 @@ ul.cards {
   overflow: hidden;
   
   li {
-    padding: 0 25px 0 25px;
+    padding: 0 25px 25px 25px;
     float: left;
     overflow: hidden;
     width: 320px;              //
@@ -53,7 +54,6 @@ ul.cards {
       float: left;
       width: 48px;
       height: 48px;
-//       outline: 1px dashed red;
 
       .triangle-border {
         .triangle-mixin;
@@ -239,8 +239,8 @@ ul.cards {
   }
 
   .disabled {
-    
     &:hover {
+      cursor: auto;
      .triangle-container {
         .triangle-border {
           border-color: transparent transparent @disabled transparent;
@@ -257,10 +257,10 @@ ul.cards {
       .preheader {
         p {
           &.default {
-            display: none;
+            display: block;
           }
           &.hover {
-            display: block;
+            display: none;
             color: @disabled;
           }
         }
@@ -307,3 +307,5 @@ ul.cards {
     }
   }
 }
+
+@import "_responsive";

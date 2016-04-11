@@ -1,3 +1,38 @@
+.bootstrap-test {
+  padding: 5px 10px 5px 10px;
+  background-color: #999999;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  position: fixed;
+  z-index: 99;
+}
+.xs,
+.sm,
+.md,
+.lg {
+  display: none;
+}
+@media all and (max-width: 749px) {
+  .xs {
+    display: inline;
+  }
+}
+@media all and (min-width: 750px) and (max-width: 970px) {
+  .sm {
+    display: inline;
+  }
+}
+@media all and (min-width: 971px) and (max-width: 1169px) {
+  .md {
+    display: inline;
+  }
+}
+@media all and (min-width: 1170px) {
+  .lg {
+    display: inline;
+  }
+}
 @font-face {
   font-family: 'Exo';
   src: url('../fonts/Exo.eot');
@@ -23,6 +58,7 @@ body {
   background: url("../back.jpg") repeat-x center center fixed;
   background-color: black;
   color: white;
+  height: 100%;
 }
 .wrap {
   margin: 0 auto 30px auto;
@@ -40,7 +76,7 @@ ul.cards {
   overflow: hidden;
 }
 ul.cards li {
-  padding: 0 25px 0 25px;
+  padding: 0 25px 25px 25px;
   float: left;
   overflow: hidden;
   width: 320px;
@@ -216,6 +252,9 @@ ul.cards .active .preheader .weight,
 ul.cards .active .card .weight {
   background-color: #d91667;
 }
+ul.cards .disabled:hover {
+  cursor: auto;
+}
 ul.cards .disabled:hover .triangle-container .triangle-border {
   border-color: transparent transparent #b3b3b3 transparent;
 }
@@ -228,10 +267,10 @@ ul.cards .disabled:hover .card .weight {
   background-color: #b3b3b3;
 }
 ul.cards .disabled:hover .preheader p.default {
-  display: none;
+  display: block;
 }
 ul.cards .disabled:hover .preheader p.hover {
-  display: block;
+  display: none;
   color: #b3b3b3;
 }
 ul.cards .disabled .triangle-container .triangle-border {
@@ -266,4 +305,33 @@ ul.cards .disabled .call-to-action .disabled {
 ul.cards .disabled .call-to-action .default,
 ul.cards .disabled .call-to-action .active {
   display: none;
+}
+@media all and (max-width: 840px) {
+  ul.cards li {
+    float: none;
+    margin: 0 auto;
+  }
+  ul.cards li .card {
+    height: 430px;
+  }
+}
+@media all and (min-width: 841px) {
+  ul.cards {
+    width: 740px;
+    margin: 0 auto;
+  }
+  ul li:last-child {
+    float: none;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 1170px) {
+  ul.cards {
+    width: 1110px;
+    margin: 0 auto;
+  }
+  ul li:last-child {
+    float: none;
+    margin: 0 auto;
+  }
 }

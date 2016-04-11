@@ -1,0 +1,56 @@
+@import (reference) "_vars";
+@import (reference) "_mixins";
+
+// boostrap-like queries
+
+// modified xs
+
+@media all
+  and (max-width: 840px) {
+
+  ul {
+    &.cards {
+      li {
+        float: none;
+        margin: 0 auto;
+
+        .card {
+          height: 430px;
+        }
+      }
+    }
+  }
+}
+
+// fix two items 
+
+@media all
+  and (min-width: 841px) {
+
+  ul {
+    &.cards {
+      width: 740px;
+      margin: 0 auto;
+    }
+    li:last-child {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}
+
+// lg
+
+@media all
+  and (min-width: 1170px) {
+  ul {
+    &.cards {
+      width: 1110px;
+      margin: 0 auto;
+    }
+    li:last-child {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}

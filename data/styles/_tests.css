@@ -1,0 +1,35 @@
+.bootstrap-test {
+  padding: 5px 10px 5px 10px;
+  background-color: #999999;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  position: fixed;
+  z-index: 99;
+}
+.xs,
+.sm,
+.md,
+.lg {
+  display: none;
+}
+@media all and (max-width: 749px) {
+  .xs {
+    display: inline;
+  }
+}
+@media all and (min-width: 750px) and (max-width: 970px) {
+  .sm {
+    display: inline;
+  }
+}
+@media all and (min-width: 971px) and (max-width: 1169px) {
+  .md {
+    display: inline;
+  }
+}
+@media all and (min-width: 1170px) {
+  .lg {
+    display: inline;
+  }
+}
